@@ -71,6 +71,7 @@ public class Test3_Naveen {
 		js.executeScript("window.scrollBy(0,-250);");
 		Thread.sleep(2000);
 		
+		
 		driver.findElementByClassName("shopping_cart_badge").click();
 		String cartPrice= driver.findElementByClassName("inventory_item_price").getText();
 		System.out.println(cartPrice);
@@ -78,6 +79,7 @@ public class Test3_Naveen {
 		double cPriceFinal=amt1/100;
 		
 		Assert.assertEquals(cPriceFinal, max);
+		driver.close();
 		
 	
 		
