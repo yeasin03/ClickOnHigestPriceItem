@@ -6,12 +6,13 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Test3_Naveen {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\yeasi\\OneDrive\\Desktop\\Automation Framwaork\\chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
@@ -63,8 +64,11 @@ public class Test3_Naveen {
 			
 			
 		}
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-250);");
+		Thread.sleep(2000);
 		
-		
+		driver.findElementByClassName("shopping_cart_badge").click();
 
 	}
 
