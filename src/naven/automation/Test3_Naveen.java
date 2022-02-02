@@ -5,10 +5,13 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import javax.accessibility.AccessibleAttributeSequence;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class Test3_Naveen {
 
@@ -69,6 +72,24 @@ public class Test3_Naveen {
 		Thread.sleep(2000);
 		
 		driver.findElementByClassName("shopping_cart_badge").click();
+		String cartPrice= driver.findElementByClassName("inventory_item_price").getText();
+		System.out.println(cartPrice);
+		double amt1 = Integer.parseInt(cartPrice.replaceAll("[^0-9]", "").toString());
+		double cPriceFinal=amt1/100;
+		
+		Assert.assertEquals(cPriceFinal, max);
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	}
 
